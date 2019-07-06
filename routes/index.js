@@ -8,11 +8,11 @@ router.get('/', (req, res) => {
     let bpost;
     let serv;
     let emp;
-    getJSON('http://appyland.herokuapp.com/posts/').then((response) => {
+    getJSON('http://api:1337/posts/').then((response) => {
         bpost = response;
-        getJSON('http://appyland.herokuapp.com/services/').then((response) => {
+        getJSON('http://api:1337/services/').then((response) => {
             serv = response;
-            getJSON('http://appyland.herokuapp.com/employers/').then((response) => {
+            getJSON('http://api:1337/employers/').then((response) => {
                 emp = response;
                 res.render('home', {
                     layout: 'default',
@@ -28,7 +28,7 @@ router.get('/', (req, res) => {
 });
 
 router.get('/post/:id', (req, res) => {
-    getJSON('http://appyland.herokuapp.com/posts?id=' + req.params.id).then((response) => {
+    getJSON('http://api:1337/posts?id=' + req.params.id).then((response) => {
         response[0].content = markdown.toHTML(response[0].content);
         res.render('post', {
             layout: 'default',

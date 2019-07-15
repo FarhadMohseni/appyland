@@ -28,16 +28,30 @@ router.get('/', (req, res) => {
 });
 
 router.get('/post/:id', (req, res) => {
-    getJSON('http://api:1337/posts?id=' + req.params.id).then((response) => {
-        response[0].content = markdown.toHTML(response[0].content);
-        res.render('post', {
-            layout: 'default',
-            post: response[0]
-        });
-    }).catch(err => {
-        if (err)
-            console.log(err);
-    });
-});
+            let blogpost;
+            getJSON('http://api:1337/posts?_id=' + req.params.id).then((response) => {
+                blogpost = response[0].content;
+                response[0].content = markdown.toHTML(response[0].content);
+                res.render('post', {
+                    layout: 'default',
+                    post: response[0]
+                });
+            }).then(() => {
+                var qs = 'http://api:1337/posts?_sort=_id:DESC&categories.name=' + encodeURIComponent(blogpost.categories[0].name)
+                let brelated;
+                getJSON(qs).then((response) => {
+                        brelated = response;
+                        console.log(brelated);
+                        res.render('post', {
+                            layout: 'default',
+                            post: blogpost,
+                            related: brelated
+                        });
+                    })
+                    .catch(err => {
+                        if (err)
+                            console.log(err);
+                    });
+            });
 
-module.exports = router;
+            module.exports = router;

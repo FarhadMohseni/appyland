@@ -4,6 +4,7 @@ COPYRIGHT by HighHay/Mivfx
 Before using this theme, you should accept themeforest licenses terms.
 http://themeforest.net/licenses
 -->
+
 <body id="menu" class="hh-body alt-bg left-light">
 	<!--[if lt IE 8]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="/pub/http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
@@ -27,8 +28,8 @@ http://themeforest.net/licenses
 						<img class="light-logo" src="/pub/img/logo.png" alt="Logo">
 					</span>
 					<span class="logo-text show-for-medium-up">
-						<span class="title">Meteor</span>
-						<span class="desc">Agency</span>
+						<span class="title">Appy</span>
+						<span class="desc">Land</span>
 					</span>
 				</h2>
 			</a>
@@ -40,8 +41,8 @@ http://themeforest.net/licenses
 		<nav class="top-menu-links">
 			<ul class="links">
 				<li><a href="/">Home</a></li>
-				<li><a href="#about-us">About</a></li>
-				<li><a href="#projects">Projects</a></li>
+				<li><a href="/#about-us">About</a></li>
+				<li><a href="/#projects">Projects</a></li>
 				<li class="show-for-small-only"><a href="#contact">Contact</a></li>
 			</ul>
 		</nav>
@@ -70,7 +71,8 @@ http://themeforest.net/licenses
 		<div class="cover-bg-mask pos-abs full-size bg-color" data-bgcolor="rgba(2, 3, 10, 0.7)"></div>
 
 		<!-- Image mask layer -->
-		<div class="cover-bg-mask pos-abs full-size bg-img" data-image-src="/pub/img/bg-layer.png"></div>
+		<div class="cover-bg-mask pos-abs full-size bg-img"
+			data-image-src="http://130.185.73.80:1342{{post.featuredImage.url}}"></div>
 
 	</div>
 	<!--END OF page cover -->
@@ -83,7 +85,8 @@ http://themeforest.net/licenses
 		<div class="cover-bg-mask pos-abs full-size bg-color" data-bgcolor="rgba(2, 3, 10, 0.7)"></div>
 
 		<!-- Image mask layer -->
-		<div class="cover-bg-mask pos-abs full-size bg-img" data-image-src="/pub/img/bg-layer.png"></div>
+		<div class="cover-bg-mask pos-abs full-size bg-img"
+			data-image-src="http://130.185.73.80:1342{{post.featuredImage.url}}"></div>
 
 	</div>
 	<!--END OF page cover -->
@@ -105,7 +108,6 @@ http://themeforest.net/licenses
 								<!--<div class="logo home-logo ">
 										<img class="" src="/pub/img/logo.png" alt="Logo">
 								</div>-->
-
 								<!-- Title -->
 								<header class="title">
 									<h2 class="high">{{post.name}}
@@ -124,9 +126,7 @@ http://themeforest.net/licenses
 								</div>
 							</div>
 						</div>
-
 					</div>
-
 					<!-- Arrows scroll down/up -->
 					<footer class="s-footer scrolldown">
 						<a class="down btn">
@@ -163,8 +163,8 @@ http://themeforest.net/licenses
 						</header>
 						<div class="article-content">
 							<div class="wrapper">
-                                    {{{post.content}}}
-                            </div>
+								{{{post.content}}}
+							</div>
 						</div>
 						<footer class="article-footer">
 							<div class="article-details">
@@ -201,84 +201,23 @@ http://themeforest.net/licenses
 						<div class="gallery-wrapper">
 							<div class="items-tile">
 								<ul class="c-item-list row small-up-1 medium-up-2 large-up-3">
+									{{#each related}}
 									<!-- item -->
 									<li class="column">
-										<a class="tile-wrapper" href="/pub/article.html">
+										<a class="tile-wrapper" href="/post/{{_id}}">
 											<div class="item-img">
 												<div class="img bg-img"
-													data-image-src="/pub/img/items/img-sample1-small.jpg"></div>
+													data-image-src="http://130.185.73.80:1342{{post.featuredImage.url}}">
+												</div>
 											</div>
 											<div class="item-desc">
 												<h3 class="title">UX Design</h3>
-												<h4>Category / Website</h4>
+												<h4>Category / {{categories}}</h4>
 											</div>
 										</a>
 									</li>
-									<!-- item -->
-									<li class="column">
-										<a class="tile-wrapper" href="/pub/article.html">
-											<div class="item-img">
-												<div class="img bg-img"
-													data-image-src="/pub/img/items/img-sample2-small.jpg"></div>
-											</div>
-											<div class="item-desc">
-												<h3 class="title">Mobile Performance</h3>
-												<h4>Photo / Web</h4>
-											</div>
-										</a>
-									</li>
-									<!-- item -->
-									<li class="column">
-										<a class="tile-wrapper" href="/pub/article.html">
-											<div class="item-img">
-												<div class="img bg-img"
-													data-image-src="/pub/img/items/img-sample3-small.jpg"></div>
-											</div>
-											<div class="item-desc">
-												<h3 class="title">Discover Antartica</h3>
-												<h4>Documentary / Photo</h4>
-											</div>
-										</a>
-									</li>
-									<!-- item -->
-									<li class="column">
-										<a class="tile-wrapper" href="/pub/article.html">
-											<div class="item-img">
-												<div class="img bg-img"
-													data-image-src="/pub/img/items/img-sample4-small.jpg"></div>
-											</div>
-											<div class="item-desc">
-												<h3 class="title">A Mile Travel</h3>
-												<h4>Entertainement / Travel</h4>
-											</div>
-										</a>
-									</li>
-									<!-- item -->
-									<li class="column">
-										<a class="tile-wrapper" href="/pub/article.html">
-											<div class="item-img">
-												<div class="img bg-img"
-													data-image-src="/pub/img/items/img-sample5-small.jpg"></div>
-											</div>
-											<div class="item-desc">
-												<h3 class="title">How to be a pro Youtuber</h3>
-												<h4>Video / Social</h4>
-											</div>
-										</a>
-									</li>
-									<!-- item -->
-									<li class="column">
-										<a class="tile-wrapper" href="/pub/article.html">
-											<div class="item-img">
-												<div class="img bg-img"
-													data-image-src="/pub/img/items/img-sample6-small.jpg"></div>
-											</div>
-											<div class="item-desc">
-												<h3 class="title">Ocean</h3>
-												<h4>Music / Beats</h4>
-											</div>
-										</a>
-									</li>
+									{{/each}}
+
 								</ul>
 							</div>
 						</div>
@@ -297,8 +236,9 @@ http://themeforest.net/licenses
 	<footer id="site-footer" class="site-footer">
 		<!-- Notes -->
 		<div class="note">
-			<p> &copy; 2017 Meteor - by <a href="/pub/http://highhay.com/"><span class="marked">Mivfx</span></a>
-				contact@highhay.com </p>
+			<p> &copy; 2019 AppyLand - by <a href="http://pashasoftware.ir"><span
+						class="marked">PashaSoftware</span></a>
+				info@appy.land</p>
 		</div>
 
 		<!-- Begin of top menu -->
@@ -313,7 +253,7 @@ http://themeforest.net/licenses
 
 	</footer>
 	<!-- END OF site footer -->
-<!--		<script src="/pub///code.jquery.com/jquery-1.12.4.min.js"></script>-->
+	<!--		<script src="/pub///code.jquery.com/jquery-1.12.4.min.js"></script>-->
 	<script src="/pub/js/vendor/jquery-1.12.4.min.js"></script>
 	<!-- All vendor scripts -->
 	<script src="/pub/js/vendor/scrolloverflow.min.js"></script>
@@ -342,4 +282,4 @@ http://themeforest.net/licenses
 	<!-- Uncomment below to enable particles scripts -->
 	<!--<script src="/pub/./js/particlejs/particles-init.js"></script>-->
 	<!--<script src="/pub/./js/particlejs/particles-init-snow.js"></script>-->
-    </body>
+</body>
